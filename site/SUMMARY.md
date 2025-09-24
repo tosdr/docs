@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Community Etiquette](README.md)
+* [Welcome!](README.md)
+* [Community Etiquette](<README (1).md>)
 
 ## ToS;DR.org Policies <a href="#tosdr-terms" id="tosdr-terms"></a>
 
@@ -19,4 +20,3 @@
 ***
 
 * [Branding](branding.md)
-* [Welcome!](welcome.md)
