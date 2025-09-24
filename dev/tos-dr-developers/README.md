@@ -5,9 +5,15 @@
 These pages make it easier to integrate ToS;DR within your systems.
 
 ## Contents
-- [RESTful API](restful-api/README.md) — endpoint documentation for search, service, case, document, and privacy shield access.
+
+* [Broken link](broken-reference "mention")
+* [Broken link](broken-reference "mention")
+* [Broken link](broken-reference "mention")
+* [Broken link](broken-reference "mention")
+* [Broken link](broken-reference "mention")
+* [Broken link](broken-reference "mention")
 
 ## Core team for API
 
-- Erik Hering — Developer
-- Evan Radkoff — Developer
+* Erik Hering — Developer
+* Evan Radkoff — Developer
