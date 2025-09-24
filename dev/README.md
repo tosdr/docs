@@ -1,3 +1,6 @@
-# Self Hosting Phoenix
+---
+description: Welcome to the Developer Documentation!
+---
 
-This section is a Work In Progress!
+# Welcome!
+

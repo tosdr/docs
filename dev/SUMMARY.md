@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Self Hosting Phoenix](README.md)
+* [Welcome!](README.md)
+* [Self Hosting Phoenix](<README (1).md>)
   * [Useful SQL Queries](self-hosting-phoenix/useful-sql-queries.md)
 * [ToS;DR Developers](tos-dr-developers/README.md)
   * [RESTful API](tos-dr-developers/restful-api/README.md)
