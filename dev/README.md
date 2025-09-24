@@ -2,10 +2,13 @@
 description: Welcome to the Developer Documentation!
 ---
 
-# Welcome!
+# Welcome
 
-Here you can find all things you need to interact with ToS;DR or integrate it into your product.
+This space brings together everything you need to integrate with ToS;DR or run our software yourself.
 
-If you want to know how to host Phoenix, make sure you check out [README (1).md](<README (1).md> "mention"). For all things API, check out [tos-dr-developers](tos-dr-developers/ "mention").
+## What's inside
+- [Self-Hosting Phoenix](self-hosting-phoenix/README.md) — current notes on deploying your own Phoenix instance, plus supporting material such as [useful SQL queries](self-hosting-phoenix/useful-sql-queries.md).
+- [ToS;DR Developers](tos-dr-developers/) — API reference material for interacting with our public services.
 
-We are happy to have you here! If you know what you are doing, why not help us by [contributing](https://github.com/tosdr)?
+## Get involved
+We welcome improvements to the tooling and the documentation itself. If you already know your way around the project, consider [contributing](https://github.com/tosdr).

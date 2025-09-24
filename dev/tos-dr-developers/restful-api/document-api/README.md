@@ -1,7 +1,5 @@
 # Document API
 
-Use this interface to retrieve a Document from our database.
+Use this interface to retrieve a document from our database.
 
-{% content-ref url="get-document-v1.md" %}
-[get-document-v1.md](get-document-v1.md)
-{% endcontent-ref %}
+- [GET /document/v1](get-document-v1.md)

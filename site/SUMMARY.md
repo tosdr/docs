@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome!](README.md)
-* [Community Etiquette](<README (1).md>)
+* [Community Etiquette](community-etiquette.md)
 
 ## ToS;DR.org Policies <a href="#tosdr-terms" id="tosdr-terms"></a>
 

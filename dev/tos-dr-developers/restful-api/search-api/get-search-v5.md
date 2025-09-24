@@ -1,33 +1,26 @@
 # GET /search/v5
 
-Endpoint to retrieve services with a query
+Use this endpoint to retrieve services that match a query.
 
-\
-
-
-\
-
-
-**Endpoint**
+## Endpoint
 
 ```
 https://api.tosdr.org/search/v5/
 ```
 
-\
-
-
-#### Parameters <a href="#get-search-v5-parameters" id="get-search-v5-parameters"></a>
+## Parameters
 
 | Parameter | Type   | Description       |
 | --------- | ------ | ----------------- |
 | query     | String | The search string |
 
-#### Limits <a href="#get-search-v5-limits" id="get-search-v5-limits"></a>
+## Rate limiting
 
-The endpoint has some rate-limiting in place. If you require higher rate limits, please contact us under team@tosdr.org\
-\
-Dataset Explorer (?query=tosdr)
+The endpoint is rate limited. For higher limits, contact the team at `team@tosdr.org`.
+
+## Example response
+
+`GET /search/v5?query=tosdr`
 
 ```
 {
@@ -65,23 +58,3 @@ Dataset Explorer (?query=tosdr)
     ]
 }
 ```
-
-\
-
-
-\
-
-
-### Related articles <a href="#get-search-v5-relatedarticles" id="get-search-v5-relatedarticles"></a>
-
-* Page:GET /search/v5
-* Page:GET /search/v3
-* Page:GET /search/v4
-
-\
-
-
-\
-
-
-\

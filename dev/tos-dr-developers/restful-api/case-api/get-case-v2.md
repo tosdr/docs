@@ -1,34 +1,33 @@
 # GET /case/v2
 
-Use this interface to retrieve a specific case from our database in json. Or, a list of all cases.
+Use this interface to retrieve a specific case from our database in JSON, or to list all cases.
 
-As a reference, a list of Cases is also listed here: [https://edit.tosdr.org/cases/](https://edit.tosdr.org/cases/)\
+As a reference, cases are also listed at [https://edit.tosdr.org/cases/](https://edit.tosdr.org/cases/).
 
-
-**Endpoint**
+## Endpoint
 
 ```
 https://api.tosdr.org/case/v2/
 ```
 
-#### Parameters <a href="#get-case-v2-parameters" id="get-case-v2-parameters"></a>
+## Parameters
 
 | Parameter | Type    | Description                                     |
 | --------- | ------- | ----------------------------------------------- |
-| id        | Integer | The Case ID to retrieve. Omit to list all cases |
-| page      | Integer | The pagination number. Default 1                |
+| id        | Integer | Case ID to retrieve. Omit the parameter to list all cases. |
+| page      | Integer | Pagination number (defaults to `1`).            |
 
-#### &#x20;Repository <a href="#get-case-v2-repository" id="get-case-v2-repository"></a>
+## Repository
 
 [https://github.com/tosdr/API/tree/master/functions/Case/GET/v2](https://github.com/tosdr/API/tree/master/functions/Case/GET/v2)
 
-#### Implemented Error codes <a href="#get-case-v2-implementederrorcodes" id="get-case-v2-implementederrorcodes"></a>
+## Implemented error codes
 
-| **Error**                            | **HTTP Status** | **Bitmask**         |
-| ------------------------------------ | --------------- | ------------------- |
-| An invalid case id has been supplied | 404             | `INVALID_PARAMETER` |
+| Error                                   | HTTP status | Bitmask            |
+| --------------------------------------- | ----------- | ------------------ |
+| An invalid case id has been supplied    | 404         | `INVALID_PARAMETER` |
 
-**Example response**
+## Example response
 
 ```
 {
@@ -46,9 +45,3 @@ https://api.tosdr.org/case/v2/
     }
 }
 ```
-
-### Related articles <a href="#get-case-v2-relatedarticles" id="get-case-v2-relatedarticles"></a>
-
-* Page:GET /search/v5
-* Page:GET /search/v3
-* Page:GET /search/v4

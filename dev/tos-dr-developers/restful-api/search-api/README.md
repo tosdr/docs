@@ -1,9 +1,7 @@
 # Search API
 
-#### GET - Search API
+Use these endpoints to retrieve services that match a query string.
 
-{% content-ref url="get-search-v5.md" %}
-[get-search-v5.md](get-search-v5.md)
-{% endcontent-ref %}
-
-Endpoint to retrieve services with a query
+- [GET /search/v5](get-search-v5.md)
+- [GET /search/v4](get-search-v4.md)
+- [Previous search versions](previous-search-versions/README.md)

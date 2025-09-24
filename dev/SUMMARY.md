@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome!](README.md)
-* [Self Hosting Phoenix](<README (1).md>)
+* [Self-Hosting Phoenix](self-hosting-phoenix/README.md)
   * [Useful SQL Queries](self-hosting-phoenix/useful-sql-queries.md)
 * [ToS;DR Developers](tos-dr-developers/README.md)
   * [RESTful API](tos-dr-developers/restful-api/README.md)
@@ -12,8 +12,8 @@
       * [GET /search/v4](tos-dr-developers/restful-api/search-api/get-search-v4.md)
       * [GET /search/v5](tos-dr-developers/restful-api/search-api/get-search-v5.md)
     * [Service API](tos-dr-developers/restful-api/service-api/README.md)
-      * [GET /service/v2/](tos-dr-developers/restful-api/service-api/get-service-v2.md)
-      * [GET /service/v3/](tos-dr-developers/restful-api/service-api/get-service-v3.md)
+      * [GET /service/v2](tos-dr-developers/restful-api/service-api/get-service-v2.md)
+      * [GET /service/v3](tos-dr-developers/restful-api/service-api/get-service-v3.md)
     * [Case API](tos-dr-developers/restful-api/case-api/README.md)
       * [GET /case/v2](tos-dr-developers/restful-api/case-api/get-case-v2.md)
     * [Document API](tos-dr-developers/restful-api/document-api/README.md)

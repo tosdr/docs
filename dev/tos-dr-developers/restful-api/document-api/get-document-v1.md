@@ -1,30 +1,30 @@
 # GET /document/v1
 
-Use this interface to retrieve a Document from our database.
+Use this interface to retrieve a document from our database.
 
-**Endpoint**
+## Endpoint
 
 ```
 https://api.tosdr.org/document/v1
 ```
 
-#### Parameters <a href="#get-document-v1-parameters" id="get-document-v1-parameters"></a>
+## Parameters
 
 | Parameter | Type    | Description                                                              |
 | --------- | ------- | ------------------------------------------------------------------------ |
-| id        | Integer | The Doc ID to retrieve. Omit to list all document IDs and text\_versions |
+| id        | Integer | Document ID to retrieve. Omit the parameter to list all document IDs and `text_version` values. |
 
-#### &#x20;Repository <a href="#get-document-v1-repository" id="get-document-v1-repository"></a>
+## Repository
 
 [https://github.com/tosdr/API/tree/master/functions/public/Document/GET/v1](https://github.com/tosdr/API/tree/master/functions/public/Document/GET/v1)
 
-#### Implemented Error codes <a href="#get-document-v1-implementederrorcodes" id="get-document-v1-implementederrorcodes"></a>
+## Implemented error codes
 
-| **Error**                           | **HTTP Status** | **Bitmask**         |
-| ----------------------------------- | --------------- | ------------------- |
-| An invalid doc id has been supplied | 404             | `INVALID_PARAMETER` |
+| Error                             | HTTP status | Bitmask            |
+| --------------------------------- | ----------- | ------------------ |
+| An invalid doc id has been supplied | 404         | `INVALID_PARAMETER` |
 
-**Example response**
+## Example response
 
 ```
 {
@@ -42,9 +42,3 @@ https://api.tosdr.org/document/v1
     }
 }
 ```
-
-### Related articles <a href="#get-document-v1-relatedarticles" id="get-document-v1-relatedarticles"></a>
-
-* Page:GET /search/v5
-* Page:GET /search/v3
-* Page:GET /search/v4

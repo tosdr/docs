@@ -1,9 +1,10 @@
 # RESTful API
 
-[service-api](service-api/ "mention")
+Use these references to work with the REST endpoints offered by ToS;DR.
 
-#### [search-api](search-api/ "mention")
-
-#### [document-api](document-api/ "mention")
-
-#### [case-api](case-api/ "mention")
+## Available sections
+- [Search API](search-api/README.md) — look up services that match a query.
+- [Service API](service-api/README.md) — retrieve metadata about a specific service.
+- [Case API](case-api/README.md) — access curated case information.
+- [Document API](document-api/README.md) — fetch legal documents stored by ToS;DR.
+- [Privacy Shields API](privacy-shields-api.md) — retrieve the SVG rating badge for a service.

@@ -1,34 +1,18 @@
 # Privacy Shields API
 
-Use this interface to retrieve a privacy shield for a service.
+Use this interface to retrieve a privacy shield (SVG badge) for a service.
 
 ![](https://shields.tosdr.org/en_596.svg)
 
-**Endpoint**
+## Endpoint
 
 ```
 https://shields.tosdr.org/<locale>_<service_id>.svg
 ```
 
-\
+## Parameters
 
-
-#### Parameters <a href="#privacyshieldsapi-parameters" id="privacyshieldsapi-parameters"></a>
-
-| Parameter   | Type            | Description         |
-| ----------- | --------------- | ------------------- |
-| service\_id | String\|Integer | The ID of a service |
-
-### Related articles <a href="#privacyshieldsapi-relatedarticles" id="privacyshieldsapi-relatedarticles"></a>
-
-* Page:GET /search/v5
-* Page:GET /search/v3
-* Page:GET /search/v4
-
-\
-
-
-\
-
-
-\
+| Parameter  | Type            | Description            |
+| ---------- | --------------- | ---------------------- |
+| service_id | String\|Integer | ID of the service.     |
+| locale     | String          | Locale code for the badge (for example `en`). |

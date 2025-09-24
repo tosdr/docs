@@ -1,28 +1,25 @@
 # GET /service/v3/
 
-Use this interface to retrieve a specific service from our database in json.
+Use this interface to retrieve a specific service from our database in JSON format.
 
-As a reference, you can also manually browse or search our Services on [https://edit.tosdr.org/services](https://edit.tosdr.org/services)\
+As a reference, you can also manually browse or search services at [https://edit.tosdr.org/services](https://edit.tosdr.org/services).
 
-
-**Endpoint**
+## Endpoint
 
 ```
 https://api.tosdr.org/service/v3/
 ```
 
-#### Parameters <a href="#get-service-v3-parameters" id="get-service-v3-parameters"></a>
+## Parameters
 
 | Parameter | Type    | Description                                                                                                                                                        |
 | --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| id        | Integer | ID of the Service                                                                                                                                                  |
-| lang      | String  | <p>Optional 2-letter language code, must be de, nl, fr, es.</p><p>If omitted, no localized titles will be loaded, and all localized_title fields will be null.</p> |
+| id        | Integer | ID of the service.                                                                                                                                                 |
+| lang      | String  | Optional 2-letter language code (`de`, `nl`, `fr`, `es`). If omitted, no localized titles are loaded and all `localized_title` fields remain `null`. |
 
-#### &#x20; <a href="#get-service-v3" id="get-service-v3"></a>
+## Example response
 
-### Dataset Explorer <a href="#get-service-v3-datasetexplorer" id="get-service-v3-datasetexplorer"></a>
-
-**Specific Service**
+### Specific service
 
 ```
 {
@@ -74,13 +71,3 @@ https://api.tosdr.org/service/v3/
     ]
 }
 ```
-
-\
-
-
-***
-
-\
-
-
-\

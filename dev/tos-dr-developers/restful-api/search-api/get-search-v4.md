@@ -1,32 +1,22 @@
 # GET /search/v4
 
-Endpoint to retrieve services with a query
+Use this endpoint to retrieve services with a query.
 
-\
-
-
-\
-
-
-**Endpoint**
+## Endpoint
 
 ```
 https://api.tosdr.org/search/v4/
 ```
 
-\
-
-
-#### Parameters <a href="#get-search-v4-parameters" id="get-search-v4-parameters"></a>
+## Parameters
 
 | Parameter | Type   | Description       |
 | --------- | ------ | ----------------- |
 | query     | String | The search string |
 
-\
+## Global rate limit
 
-
-#### Global Rate Limit <a href="#get-search-v4-globalratelimit" id="get-search-v4-globalratelimit"></a>
+This interface applies the shared platform rate limits shown below. Individual endpoints may define additional limits.
 
 | Benefit | Second | Hour   | Day    |
 | ------- | ------ | ------ | ------ |
@@ -35,38 +25,8 @@ https://api.tosdr.org/search/v4/
 | Office  | 15000  | 100000 | 150000 |
 | Partner | 150    | 10000  | 50000  |
 
-This rate limit applies to all interfaces. Each Interface and method may implement its own rate limit.
+## Implemented error codes
 
-\
-
-
-#### Implemented Error codes <a href="#get-search-v4-implementederrorcodes" id="get-search-v4-implementederrorcodes"></a>
-
-| Error Code    |
+| Error code    |
 | ------------- |
-| QUERY\_FAILED |
-
-### &#x20;Dataset Explorer <a href="#get-search-v4-datasetexplorer" id="get-search-v4-datasetexplorer"></a>
-
-\
-
-
-\
-
-
-\
-
-
-### Related articles <a href="#get-search-v4-relatedarticles" id="get-search-v4-relatedarticles"></a>
-
-* Page:GET /search/v5
-* Page:GET /search/v3
-* Page:GET /search/v4
-
-\
-
-
-\
-
-
-\
+| QUERY_FAILED  |

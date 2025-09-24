@@ -1,10 +1,7 @@
 # Case API
 
-Use this interface to retrieve a specific case from our database in json. Or, a list of all cases.
+Use this interface to retrieve a specific case from our database in JSON, or to list all cases.
 
-As a reference, a list of Cases is also listed here: [https://edit.tosdr.org/cases/](https://edit.tosdr.org/cases/)\
+As a reference, cases are also listed at [https://edit.tosdr.org/cases/](https://edit.tosdr.org/cases/).
 
-
-{% content-ref url="get-case-v2.md" %}
-[get-case-v2.md](get-case-v2.md)
-{% endcontent-ref %}
+- [GET /case/v2](get-case-v2.md)

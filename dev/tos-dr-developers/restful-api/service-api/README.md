@@ -1,7 +1,6 @@
 # Service API
 
-With our service api you can interact with services stored in our database.
+Use these endpoints to interact with services stored in our database.
 
-{% content-ref url="get-service-v3.md" %}
-[get-service-v3.md](get-service-v3.md)
-{% endcontent-ref %}
+- [GET /service/v3](get-service-v3.md)
+- [GET /service/v2](get-service-v2.md)

@@ -1,31 +1,20 @@
 # GET /search/v2
 
-Use this interface to search for a service from our database in json.
+Search for services in JSON format. This version has been superseded by `GET /search/v3`.
 
-\
-
-
-This API has been superseded by **GET /search/v3/**
-
-**Endpoint**
+## Endpoint
 
 ```
 https://api.tosdr.org/search/v2/<query>.json
 ```
 
-\
-
-
-#### Parameters <a href="#get-search-v2-parameters" id="get-search-v2-parameters"></a>
+## Parameters
 
 | Parameter | Type   | Description       |
 | --------- | ------ | ----------------- |
 | query     | String | Your search query |
 
-\
-
-
-#### Global Rate Limit <a href="#get-search-v2-globalratelimit" id="get-search-v2-globalratelimit"></a>
+## Global rate limit
 
 | Benefit | Second | Hour   | Day    |
 | ------- | ------ | ------ | ------ |
@@ -34,21 +23,13 @@ https://api.tosdr.org/search/v2/<query>.json
 | Office  | 15000  | 100000 | 150000 |
 | Partner | 150    | 10000  | 50000  |
 
-This rate limit applies to all interfaces. Each Interface and method may implement its own rate limit.
+## Implemented error codes
 
-\
+| Error code   |
+| ------------ |
+| QUERY_FAILED |
 
-
-#### Implemented Error codes <a href="#get-search-v2-implementederrorcodes" id="get-search-v2-implementederrorcodes"></a>
-
-| Error Code    |
-| ------------- |
-| QUERY\_FAILED |
-
-\
-
-
-**JSON Schema**
+## JSON schema
 
 ```
 {
@@ -159,17 +140,3 @@ This rate limit applies to all interfaces. Each Interface and method may impleme
     }
 }
 ```
-
-### Related articles <a href="#get-search-v2-relatedarticles" id="get-search-v2-relatedarticles"></a>
-
-* Page:GET /search/v5
-* Page:GET /search/v3
-* Page:GET /search/v4
-
-\
-
-
-\
-
-
-\
