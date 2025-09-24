@@ -19,3 +19,13 @@
     * [Document API](tos-dr-developers/restful-api/document-api/README.md)
       * [GET /document/v1](tos-dr-developers/restful-api/document-api/get-document-v1.md)
     * [Privacy Shields API](tos-dr-developers/restful-api/privacy-shields-api.md)
+  * ```yaml
+    type: builtin:openapi
+    props:
+      models: true
+    dependencies:
+      spec:
+        ref:
+          kind: openapi
+          spec: tosdr-api
+    ```
