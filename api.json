@@ -1,0 +1,1343 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "ToS;DR API",
+      "version": "1.0.0",
+      "description": "API for Terms of Service; Didn't Read (ToS;DR) project."
+    },
+    "servers": [
+      {
+        "url": "https://api.tosdr.org",
+        "description": "Production server"
+      },
+      {
+        "url": "https://api.staging.tosdr.org",
+        "description": "Staging server"
+      }
+    ],
+    "paths": {
+      "/search/v5": {
+        "parameters": [],
+        "get": {
+          "summary": "Search Services V5",
+          "tags": [
+            "Search"
+          ],
+          "parameters": [
+            {
+              "name": "query",
+              "in": "query",
+              "required": true,
+              "description": "Search query string (e.g., facebook)",
+              "example": "facebook",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "required": false,
+              "description": "Expected content type",
+              "example": "application/json",
+              "schema": {
+                "type": "string",
+                "deprecated": false
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "services": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "description": "Unique ID of the service"
+                            },
+                            "is_comprehensively_reviewed": {
+                              "type": "boolean",
+                              "description": "Indicates if the service has a comprehensive review"
+                            },
+                            "urls": {
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "description": "URL associated with the service"
+                              }
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "Name of the service"
+                            },
+                            "updated_at": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "Last update timestamp"
+                            },
+                            "created_at": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "Creation timestamp"
+                            },
+                            "slug": {
+                              "type": "string",
+                              "description": "URL-friendly identifier for the service"
+                            },
+                            "rating": {
+                              "type": "string",
+                              "description": "Service's privacy rating (e.g., N/A, A, E)"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "example": {
+                    "services": [
+                      {
+                        "id": 3505,
+                        "is_comprehensively_reviewed": true,
+                        "urls": [
+                          "https://example.com",
+                          "https://example.net"
+                        ],
+                        "name": "Example Service",
+                        "updated_at": "1987-02-06T23:45:44.330Z",
+                        "created_at": "1990-09-25T04:14:40.855Z",
+                        "slug": "example-service",
+                        "rating": "N/A"
+                      },
+                      {
+                        "id": 8081,
+                        "is_comprehensively_reviewed": false,
+                        "urls": [
+                          "https://another.com",
+                          "https://third.org"
+                        ],
+                        "name": "Another Service",
+                        "updated_at": "1998-04-04T10:13:37.636Z",
+                        "created_at": "1991-04-07T20:34:26.937Z",
+                        "slug": "another-service",
+                        "rating": "N/A"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/search/v4": {
+        "parameters": [],
+        "get": {
+          "summary": "Search Services V4",
+          "tags": [
+            "Search",
+            "Deprecated"
+          ],
+          "parameters": [
+            {
+              "name": "query",
+              "in": "query",
+              "required": true,
+              "description": "Search query string (e.g., facebook)",
+              "example": "facebook",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "required": false,
+              "description": "Expected content type",
+              "example": "application/json",
+              "schema": {
+                "type": "string",
+                "deprecated": false
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "integer"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "services": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/ServiceV4"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "example": {
+                    "error": 1393,
+                    "message": "string",
+                    "parameters": {
+                      "services": [
+                        {
+                          "id": "string",
+                          "is_comprehensively_reviewed": true,
+                          "urls": [
+                            "string",
+                            "string"
+                          ],
+                          "name": "string",
+                          "status": "string",
+                          "updated_at": "2005-10-10T00:37:01.340Z",
+                          "created_at": "1966-03-30T10:51:31.246Z",
+                          "slug": "string",
+                          "wikipedia": "https://OyMbPBnlSqSdUJcduUfFexmbsMfEntK.vlifr0lXJx7,uHy1-lfJKSLqo2ReCC0cD3Ewpfdx0ngPqwtjHPACnVfGtdf9G",
+                          "rating": {
+                            "hex": "string",
+                            "human": "N/A",
+                            "letter": "N/A"
+                          },
+                          "links": {
+                            "phoenix": {
+                              "service": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                              },
+                              "documents": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                              },
+                              "new_comment": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                              },
+                              "edit": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                              }
+                            },
+                            "crisp": {
+                              "api": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                              },
+                              "service": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                              },
+                              "badge": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/service/v3": {
+        "parameters": [],
+        "get": {
+          "summary": "Get Service V3",
+          "tags": [
+            "Service"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "required": false,
+              "description": "Service ID, omit to list all services",
+              "example": "182",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "lang",
+              "in": "query",
+              "required": false,
+              "description": "Language code (2 letters)",
+              "schema": {
+                "type": "string",
+                "enum": [
+                  "en",
+                  "de",
+                  "nl",
+                  "fr",
+                  "es"
+                ]
+              },
+              "example": "en"
+            },
+            {
+              "name": "show_all",
+              "in": "query",
+              "required": false,
+              "description": "Show all points including non-approved ones",
+              "example": "false",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "required": false,
+              "description": "Page number when id is not provided",
+              "example": "0",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "required": false,
+              "description": "Expected content type",
+              "example": "application/json",
+              "schema": {
+                "type": "string",
+                "deprecated": false
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "headers": {
+                "Server": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "example": "nginx/1.26.3"
+                },
+                "Date": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "example": "Wed, 24 Sep 2025 17:38:46 GMT"
+                },
+                "Content-Type": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "example": "application/json"
+                },
+                "Content-Length": {
+                  "schema": {
+                    "type": "integer"
+                  },
+                  "example": "37644"
+                }
+              },
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServiceV3"
+                  },
+                  "example": {
+                    "id": 182,
+                    "is_comprehensively_reviewed": true,
+                    "name": "Facebook",
+                    "updated_at": "2023-07-10T22:02:24.881812",
+                    "created_at": "2018-01-16T15:26:05.533031",
+                    "slug": "facebook",
+                    "rating": "E",
+                    "urls": [
+                      "facebook.com",
+                      "facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion",
+                      "facebookcorewwwi.onion",
+                      "messenger.com",
+                      "fb.com",
+                      "fbcdn.net",
+                      "facebook.net",
+                      "atdmt.com",
+                      "lrcdn.net",
+                      "atdmt.com",
+                      "atlassolutions.com",
+                      "accountkit.com"
+                    ],
+                    "image": "https://s3.tosdr.org/logos/182.png",
+                    "documents": [
+                      {
+                        "id": 452,
+                        "name": "Cookie Policy",
+                        "url": "https://www.facebook.com/policies/cookies/",
+                        "updated_at": "2024-11-08T11:06:03.388912",
+                        "created_at": "2018-08-29T13:26:35.525479"
+                      }
+                    ],
+                    "points": [
+                      {
+                        "id": 1120,
+                        "title": "The service uses your personal data for advertising",
+                        "source": "https://www.facebook.com/privacy/explanation",
+                        "status": "approved",
+                        "analysis": "Collects all data you send (username, email, credit card number...), any kind of info other put about you as well.",
+                        "case": {
+                          "id": 216,
+                          "weight": 50,
+                          "title": "Your personal data is used for advertising",
+                          "description": "Your interaction with the service and data you have shared with them may be gathered to create an advertising ID or profile to target ads on you, either on the website you were visiting or in third party websites.",
+                          "updated_at": "2021-05-06T08:13:43.286762",
+                          "created_at": "2018-01-16T15:26:10.380532",
+                          "topic_id": 57,
+                          "classification": "bad"
+                        },
+                        "document_id": null,
+                        "updated_at": "2019-01-27T16:35:02.999854",
+                        "created_at": "2018-01-16T20:56:54.907566"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/service/v2": {
+        "parameters": [],
+        "get": {
+          "summary": "Get Service V2",
+          "tags": [
+            "Service",
+            "Deprecated"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "required": false,
+              "description": "Service ID, omit to list all services",
+              "example": "182",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "required": false,
+              "description": "Page number when id is not provided",
+              "example": "0",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "required": false,
+              "description": "Expected content type",
+              "example": "application/json",
+              "schema": {
+                "type": "string",
+                "deprecated": false
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "headers": {
+                "Server": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "example": "nginx/1.26.3"
+                },
+                "Date": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "example": "Wed, 24 Sep 2025 17:40:26 GMT"
+                },
+                "Content-Type": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "example": "application/json"
+                },
+                "Content-Length": {
+                  "schema": {
+                    "type": "integer"
+                  },
+                  "example": "37686"
+                }
+              },
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/ResponseWrapper"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "parameters": {
+                            "$ref": "#/components/schemas/ServiceV3"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "example": {
+                    "error": 256,
+                    "message": "OK",
+                    "parameters": {
+                      "id": 182,
+                      "is_comprehensively_reviewed": true,
+                      "name": "Facebook",
+                      "updated_at": "2023-07-10T22:02:24.881812",
+                      "created_at": "2018-01-16T15:26:05.533031",
+                      "slug": "facebook",
+                      "rating": "E",
+                      "urls": [
+                        "facebook.com"
+                      ],
+                      "image": "https://s3.tosdr.org/logos/182.png",
+                      "documents": [
+                        {
+                          "id": 452,
+                          "name": "Cookie Policy",
+                          "url": "https://www.facebook.com/policies/cookies/",
+                          "updated_at": "2024-11-08T11:06:03.388912",
+                          "created_at": "2018-08-29T13:26:35.525479"
+                        }
+                      ],
+                      "points": [
+                        {
+                          "id": 1120,
+                          "title": "The service uses your personal data for advertising",
+                          "source": "https://www.facebook.com/privacy/explanation",
+                          "status": "approved",
+                          "analysis": "Collects all data you send (username, email, credit card number...), any kind of info other put about you as well.",
+                          "case": {
+                            "id": 216,
+                            "weight": 50,
+                            "title": "Your personal data is used for advertising",
+                            "description": "Your interaction with the service and data you have shared with them may be gathered to create an advertising ID or profile to target ads on you, either on the website you were visiting or in third party websites.",
+                            "updated_at": "2021-05-06T08:13:43.286762",
+                            "created_at": "2018-01-16T15:26:10.380532",
+                            "topic_id": 57,
+                            "classification": "bad"
+                          },
+                          "document_id": null,
+                          "updated_at": "2019-01-27T16:35:02.999854",
+                          "created_at": "2018-01-16T20:56:54.907566"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/document/v2": {
+        "parameters": [],
+        "get": {
+          "summary": "Get Document V2",
+          "tags": [
+            "Document"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "required": true,
+              "description": "Document ID",
+              "example": "238",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "required": false,
+              "description": "Expected content type",
+              "example": "application/json",
+              "schema": {
+                "type": "string",
+                "deprecated": false
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/DocumentV2"
+                  },
+                  "example": {
+                    "id": 238,
+                    "name": "Data Policy",
+                    "url": "https://www.facebook.com/about/privacy/",
+                    "text": "Full Data Policy What kinds of information do we collect?...",
+                    "updated_at": "2024-11-08T11:07:29.772152",
+                    "created_at": "2018-07-17T10:12:00.598911",
+                    "text_version": null,
+                    "service_id": 182
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/document/v1": {
+        "parameters": [],
+        "get": {
+          "summary": "Get Document V1",
+          "tags": [
+            "Document",
+            "Deprecated"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "required": true,
+              "description": "Document ID",
+              "example": "238",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "required": false,
+              "description": "Expected content type",
+              "example": "application/json",
+              "schema": {
+                "type": "string",
+                "deprecated": false
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/ResponseWrapper"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "parameters": {
+                            "$ref": "#/components/schemas/DocumentV2"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "example": {
+                    "error": 256,
+                    "message": "OK",
+                    "parameters": {
+                      "id": 238,
+                      "name": "Data Policy",
+                      "url": "https://www.facebook.com/about/privacy/",
+                      "text": "Full Data Policy What kinds of information do we collect?...",
+                      "updated_at": "2024-11-08T11:07:29.772152",
+                      "created_at": "2018-07-17T10:12:00.598911",
+                      "text_version": null,
+                      "service_id": 182
+                    }
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/point/v1": {
+        "parameters": [],
+        "get": {
+          "summary": "Get Point V1",
+          "tags": [
+            "Points"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "required": false,
+              "description": "Point ID",
+              "example": "10493",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "case_id",
+              "in": "query",
+              "required": false,
+              "description": "Case ID, to get all points for a Case",
+              "example": "234",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "required": false,
+              "description": "Page number",
+              "example": "0",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "required": false,
+              "description": "Expected content type",
+              "example": "application/json",
+              "schema": {
+                "type": "string",
+                "deprecated": false
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "headers": {
+                "Content-Length": {
+                  "schema": {
+                    "type": "integer"
+                  },
+                  "example": "1152"
+                }
+              },
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object"
+                  },
+                  "example": {
+                    "id": 10493,
+                    "title": "Facebook stores your data whether you have an account or not.",
+                    "source": "https://www.facebook.com/policy/cookies/printable",
+                    "status": "approved",
+                    "analysis": "This is the principle of their shady \"Shadow Profile\".",
+                    "case": {
+                      "id": 234,
+                      "weight": 50,
+                      "title": "They store data on you even if you did not interact with the service",
+                      "description": "Some services store data on you even if you did not provide that data yourself...",
+                      "updated_at": "2020-10-19T19:26:18.784813",
+                      "created_at": "2018-07-03T09:36:21.094100",
+                      "topic_id": 41,
+                      "classification": "blocker"
+                    },
+                    "document_id": 452,
+                    "updated_at": "2023-07-11T04:44:47.875309",
+                    "created_at": "2020-10-08T15:37:04.743828"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid request (e.g., both 'id' and 'case_id' provided)",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "detail": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "example": {
+                    "detail": "Pass `id` or `case_id` and not both"
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/case/v3": {
+        "parameters": [],
+        "get": {
+          "summary": "Get Case V3",
+          "tags": [
+            "Case"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "required": false,
+              "description": "Case ID",
+              "example": "234",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "required": false,
+              "description": "Expected content type",
+              "example": "application/json",
+              "schema": {
+                "type": "string",
+                "deprecated": false
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CaseV3"
+                  },
+                  "example": {
+                    "id": 234,
+                    "weight": 100,
+                    "title": "They store data on you even if you did not interact with the service",
+                    "description": "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
+                    "updated_at": "2020-10-19T19:26:18.784813",
+                    "created_at": "2018-07-03T09:36:21.094100",
+                    "topic_id": 41,
+                    "classification": "blocker"
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/case/v2": {
+        "parameters": [],
+        "get": {
+          "summary": "Get Case V2",
+          "tags": [
+            "Case",
+            "Deprecated"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "required": false,
+              "description": "Case ID",
+              "example": "234",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "required": false,
+              "description": "Page number when id is not provided",
+              "example": "0",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "required": false,
+              "description": "Expected content type",
+              "example": "application/json",
+              "schema": {
+                "type": "string",
+                "deprecated": false
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/ResponseWrapper"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "parameters": {
+                            "$ref": "#/components/schemas/CaseV3"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "example": {
+                    "error": 256,
+                    "message": "OK",
+                    "parameters": {
+                      "id": 234,
+                      "weight": 100,
+                      "title": "They store data on you even if you did not interact with the service",
+                      "description": "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
+                      "updated_at": "2020-10-19T19:26:18.784813",
+                      "created_at": "2018-07-03T09:36:21.094100",
+                      "topic_id": 41,
+                      "classification": "blocker"
+                    }
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "ValidationErrorItem": {
+          "type": "object",
+          "properties": {
+            "loc": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "msg": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "ValidationError": {
+          "type": "object",
+          "properties": {
+            "detail": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ValidationErrorItem"
+              }
+            }
+          }
+        },
+        "ResponseWrapper": {
+          "type": "object",
+          "properties": {
+            "error": {
+              "type": "integer",
+              "description": "Status code (e.g., 256 for OK)"
+            },
+            "message": {
+              "type": "string",
+              "description": "Status message"
+            },
+            "parameters": {
+              "type": "object",
+              "description": "The main response payload"
+            }
+          }
+        },
+        "RatingV4": {
+          "type": "object",
+          "properties": {
+            "hex": {
+              "type": "string"
+            },
+            "human": {
+              "type": "string"
+            },
+            "letter": {
+              "type": "string"
+            }
+          }
+        },
+        "LinkValue": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          }
+        },
+        "LinkCategory": {
+          "type": "object",
+          "properties": {
+            "service": {
+              "$ref": "#/components/schemas/LinkValue"
+            },
+            "documents": {
+              "$ref": "#/components/schemas/LinkValue"
+            },
+            "new_comment": {
+              "$ref": "#/components/schemas/LinkValue"
+            },
+            "edit": {
+              "$ref": "#/components/schemas/LinkValue"
+            },
+            "api": {
+              "$ref": "#/components/schemas/LinkValue"
+            },
+            "badge": {
+              "$ref": "#/components/schemas/LinkValue"
+            }
+          }
+        },
+        "ServiceV4": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique ID of the service"
+            },
+            "is_comprehensively_reviewed": {
+              "type": "boolean",
+              "description": "Indicates if the service has a comprehensive review"
+            },
+            "urls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "name": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "slug": {
+              "type": "string"
+            },
+            "wikipedia": {
+              "type": "string",
+              "format": "uri"
+            },
+            "rating": {
+              "$ref": "#/components/schemas/RatingV4"
+            },
+            "links": {
+              "type": "object",
+              "properties": {
+                "phoenix": {
+                  "$ref": "#/components/schemas/LinkCategory"
+                },
+                "crisp": {
+                  "$ref": "#/components/schemas/LinkCategory"
+                }
+              }
+            }
+          }
+        },
+        "DocumentReference": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "updated_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "CaseV3": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "weight": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "localized_title": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "topic_id": {
+              "type": "integer"
+            },
+            "classification": {
+              "type": "string"
+            }
+          }
+        },
+        "PointV3": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string",
+              "format": "uri"
+            },
+            "status": {
+              "type": "string"
+            },
+            "analysis": {
+              "type": "string"
+            },
+            "case": {
+              "$ref": "#/components/schemas/CaseV3"
+            },
+            "document_id": {
+              "type": "integer",
+              "nullable": true
+            },
+            "updated_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "ServiceV3": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "is_comprehensively_reviewed": {
+              "type": "boolean"
+            },
+            "name": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "slug": {
+              "type": "string"
+            },
+            "rating": {
+              "type": "string"
+            },
+            "urls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "image": {
+              "type": "string",
+              "format": "uri"
+            },
+            "documents": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/DocumentReference"
+              }
+            },
+            "points": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PointV3"
+              }
+            }
+          }
+        },
+        "DocumentV2": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "text": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "text_version": {
+              "type": "string",
+              "nullable": true
+            },
+            "service_id": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
