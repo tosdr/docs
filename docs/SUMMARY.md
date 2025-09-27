@@ -5,3 +5,7 @@
 ## Getting Started
 
 * [How to install the Safari Extension on macOS](getting-started/safari-macos.md)
+
+## FAQ
+
+* [Browser Extension FAQ](faq/browser-extension-faq.md)
