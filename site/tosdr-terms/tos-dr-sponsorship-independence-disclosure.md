@@ -14,6 +14,7 @@ For transparency, we list all of our past and current sponsors, along with the r
 * Betterstack
 * Atlassian
 * Startmail
+* GitBook
 
 #### Past Sponsorships: <a href="#tos-drsponsorshipindependencedisclosure-pastsponsorships" id="tos-drsponsorshipindependencedisclosure-pastsponsorships"></a>
 
