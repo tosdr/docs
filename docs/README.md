@@ -24,4 +24,4 @@ If you are looking for the Developer Documentation, please [click here!](https:/
 
 ### Jump right in
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-laptop-arrow-down">:laptop-arrow-down:</i></h4></td><td><strong>Install Extension on macOS</strong></td><td>Learn how to install the macOS Safari Extension, step-by-step!</td><td></td><td></td><td><a href="getting-started/publish-your-docs.md">publish-your-docs.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><i class="fa-laptop-arrow-down">:laptop-arrow-down:</i></h4></td><td><strong>Install Extension on macOS</strong></td><td>Learn how to install the macOS Safari Extension, step-by-step!</td><td></td><td></td><td><a href="getting-started/safari-macos.md">safari-macos.md</a></td></tr></tbody></table>

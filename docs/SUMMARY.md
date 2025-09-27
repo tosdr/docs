@@ -4,4 +4,4 @@
 
 ## Getting Started
 
-* [How to install the Safari Extension on macOS](getting-started/publish-your-docs.md)
+* [How to install the Safari Extension on macOS](getting-started/safari-macos.md)
