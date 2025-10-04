@@ -2,13 +2,11 @@
 
 ## Below is our extension privacy policy <a href="#browserextensionprivacy-belowisourextensionprivacypolicy" id="browserextensionprivacy-belowisourextensionprivacypolicy"></a>
 
-Upon loading the extension, we retrieve a single json file containing all services and their respective urls from [https://api.tosdr.org/v1/all.json](https://api.tosdr.org/v1/all.json)
+Upon loading the extension, we retrieve a single json file containing all services and their respective urls from our API.
 
 Additionally, when opening a popup the service data gets retrieved with all points and documents in it.
 
-We also check for extension updates by calling our updatecheck api which is hosted on the same api server. (This can be disabled)
-
-To display small images of a service's rating, we contact our shields server at [shields.tosdr.org](http://shields.tosdr.org). This can be disabled in the settings.
+We also check for extension updates by calling the same service DB API which is hosted on the same API server.
 
 The extension also displays hyperlinks to our website, but that will not affect your privacy if you don't actively click on them.
 
