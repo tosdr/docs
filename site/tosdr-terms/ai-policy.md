@@ -1,8 +1,8 @@
 ---
 description: >-
   In the context of artificial intelligence systems such as large language
-  models (such as LLMs), we have established a policy to be followed internally
-  and by anyone who wishes to contribute to ToS;DR.
+  models (LLMs), we have established a policy to be followed internally and by
+  anyone who wishes to contribute to ToS;DR.
 ---
 
 # AI Policy
