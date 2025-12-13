@@ -11,6 +11,7 @@
   * [Security Vulnerability Safe Harbor](tosdr-terms/tos-dr-security-policy/security-vulnerability-safe-harbor.md)
 * [ToS;DR Sponsorship Independence Disclosure](tosdr-terms/tos-dr-sponsorship-independence-disclosure.md)
 * [Browser Extension Privacy](tosdr-terms/browser-extension-privacy.md)
+* [AI Policy](tosdr-terms/ai-policy.md)
 
 ## Phoenix Policies
 
