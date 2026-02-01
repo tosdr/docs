@@ -6,7 +6,7 @@ Sponsorship does not imply endorsement, nor should our list of sponsors be consi
 
 Our commitment remains to providing independent and unbiased evaluations of online services.
 
-For transparency, we list all of our past and current sponsors, along with the reason for any sponsorship terminations, starting in mid-2024.
+For transparency, we list all of our past and current sponsors, starting in mid-2024.
 
 #### Current Sponsorships: <a href="#tos-drsponsorshipindependencedisclosure-currentsponsorships" id="tos-drsponsorshipindependencedisclosure-currentsponsorships"></a>
 
