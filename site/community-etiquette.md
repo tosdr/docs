@@ -1,5 +1,7 @@
 # Community Etiquette
 
+**LAST UPDATED: 2026-06-16**
+
 ToS;DR strives to be an all-inclusive community for all ages, ethnicities, and genders.
 
 ---
