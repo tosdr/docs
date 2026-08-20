@@ -8,7 +8,15 @@ Upon realizing the scale of the problem, we immediately reset all affected user 
 
 For transparency, here is a rough timeline of events:
 
-28.07.2026 - 14:00 CET: Claude flagged the exposed credentials in the stale branch, the affected branch has been deleted. 29.07.2026 - 16:42 CET: The Autoriteit Persoonsgegevens (NL) has been notified. 30.07.2026 - 09:33 CET: We have made contact with GitHub to get the exposed credentials removed from caches and forks. 15.08.2026: GitHub has removed all forks of Phoenix and emailed everyone that had forked us about the breach. Blob Caches have yet to be deleted. 17.08.2026 - 11:13 CET: We have made the Repository edit.tosdr.org private to prevent further exposure, this resulted in a purge of the blob cache as well. The direct reference to the file came up with a 404 (Not Found).
+28.07.2026 - 14:00 CET: Claude flagged the exposed credentials in the stale branch, the affected branch has been deleted.&#x20;
+
+29.07.2026 - 16:42 CET: The Autoriteit Persoonsgegevens (NL) has been notified.&#x20;
+
+30.07.2026 - 09:33 CET: We have made contact with GitHub to get the exposed credentials removed from caches and forks.&#x20;
+
+15.08.2026: GitHub has removed all forks of Phoenix and emailed everyone that had forked us about the breach. Blob Caches have yet to be deleted.&#x20;
+
+17.08.2026 - 11:13 CET: We have made the Repository edit.tosdr.org private to prevent further exposure, this resulted in a purge of the blob cache as well. The direct reference to the file came up with a 404 (Not Found).
 
 We have also sent everyone affected the following mail:
 
